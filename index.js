@@ -155,8 +155,14 @@ class Instructor extends Lambdasian {
     return `${student.name} receives a perfect score on ${subject}`;
   }
   //stretch
-  randomGrade(){
-
+  randomGrade(student){
+    let rando = Math.floor((Math.random()*100)+1);
+    if (student.grade>rando){
+      student.grade-=rando;
+    } else {
+      student.grade+=rando;
+    }  
+    return student.grade;  
   }
 }
 
@@ -181,7 +187,7 @@ class Student extends Lambdasian {
     this.previousBackground = stuAttrs.previousBackground;
     this.className = stuAttrs.className;
     this.favSubjects = stuAttrs.favSubjects;
-    this.grade = Math.floor((Math.random() * 100) +1);
+    this.grade = Math.floor((Math.random()*100)+1);
   }
 
   listSubjects(){
@@ -228,17 +234,27 @@ class ProjectManager extends Instructor {
 
 //My own tests for stretch
 
-// const studentAttr2 = {
-//   name: 'Matt',
-//   age: 30,
-//   location: 'London',
-//   previousBackground: 'Plumber',
-//   className: 'WebEU 3',
-//   favSubjects: ['JS', 'Node', 'Redux']
-// }
-// let newStudent = new Student(studentAttr2);
+const studentAttr2 = {
+  name: 'Matt',
+  age: 30,
+  location: 'London',
+  previousBackground: 'Plumber',
+  className: 'WebEU 3',
+  favSubjects: ['JS', 'Node', 'Redux']
+}
+let newStudent = new Student(studentAttr2);
 // console.log(newStudent.grade);
 
+const instructorAttr2 = {
+  name: 'Luis',
+  age: 45,
+  location: 'Provo',
+  specialty: 'SQL',
+  favLanguage: 'C#',
+  catchPhrase: 'Don\'t forget the homies'
+}
+let newInstructor = new Instructor(instructorAttr2);
+console.log(newInstructor.randomGrade(newStudent));
 
 /*
   STRETCH PROBLEM (no tests!)
