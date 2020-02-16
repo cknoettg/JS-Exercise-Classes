@@ -154,6 +154,10 @@ class Instructor extends Lambdasian {
   grade(student, subject){
     return `${student.name} receives a perfect score on ${subject}`;
   }
+  //stretch
+  randomGrade(){
+
+  }
 }
 
 /*
@@ -177,6 +181,7 @@ class Student extends Lambdasian {
     this.previousBackground = stuAttrs.previousBackground;
     this.className = stuAttrs.className;
     this.favSubjects = stuAttrs.favSubjects;
+    this.grade = Math.floor((Math.random() * 100) +1);
   }
 
   listSubjects(){
@@ -220,6 +225,20 @@ class ProjectManager extends Instructor {
     return `${this.name} debugs ${student.name}'s code on ${subject}`;
   }
 }
+
+//My own tests for stretch
+
+// const studentAttr2 = {
+//   name: 'Matt',
+//   age: 30,
+//   location: 'London',
+//   previousBackground: 'Plumber',
+//   className: 'WebEU 3',
+//   favSubjects: ['JS', 'Node', 'Redux']
+// }
+// let newStudent = new Student(studentAttr2);
+// console.log(newStudent.grade);
+
 
 /*
   STRETCH PROBLEM (no tests!)
