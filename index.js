@@ -155,6 +155,7 @@ class Instructor extends Lambdasian {
     return `${student.name} receives a perfect score on ${subject}`;
   }
   //stretch
+  //see also - https://stackoverflow.com/questions/21271392/javascript-to-randomly-add-subtract-to-a-number-every-second
   randomGrade(student){
     let rando = Math.floor((Math.random()*100)+1);
     if (student.grade>rando){
@@ -187,6 +188,7 @@ class Student extends Lambdasian {
     this.previousBackground = stuAttrs.previousBackground;
     this.className = stuAttrs.className;
     this.favSubjects = stuAttrs.favSubjects;
+    //stretch
     this.grade = Math.floor((Math.random()*100)+1);
   }
 
@@ -200,6 +202,15 @@ class Student extends Lambdasian {
 
   sprintChallenge(subject){
     return `${this.name} has begun sprint challenge on ${subject}`;
+  }
+
+  //stretch
+  graduate(){
+    if (this.grade>=70){
+      return `You've graduated!`;
+    } else {
+      return `You can't graduate yet :-(`;
+    }
   }
 }
 
@@ -234,27 +245,29 @@ class ProjectManager extends Instructor {
 
 //My own tests for stretch
 
-const studentAttr2 = {
-  name: 'Matt',
-  age: 30,
-  location: 'London',
-  previousBackground: 'Plumber',
-  className: 'WebEU 3',
-  favSubjects: ['JS', 'Node', 'Redux']
-}
-let newStudent = new Student(studentAttr2);
+// const studentAttr2 = {
+//   name: 'Matt',
+//   age: 30,
+//   location: 'London',
+//   previousBackground: 'Plumber',
+//   className: 'WebEU 3',
+//   favSubjects: ['JS', 'Node', 'Redux']
+// }
+// let newStudent = new Student(studentAttr2);
 // console.log(newStudent.grade);
 
-const instructorAttr2 = {
-  name: 'Luis',
-  age: 45,
-  location: 'Provo',
-  specialty: 'SQL',
-  favLanguage: 'C#',
-  catchPhrase: 'Don\'t forget the homies'
-}
-let newInstructor = new Instructor(instructorAttr2);
-console.log(newInstructor.randomGrade(newStudent));
+// const instructorAttr2 = {
+//   name: 'Luis',
+//   age: 45,
+//   location: 'Provo',
+//   specialty: 'SQL',
+//   favLanguage: 'C#',
+//   catchPhrase: 'Don\'t forget the homies'
+// }
+// let newInstructor = new Instructor(instructorAttr2);
+//console.log(newInstructor.randomGrade(newStudent));
+
+//console.log(newStudent.graduate());
 
 /*
   STRETCH PROBLEM (no tests!)
