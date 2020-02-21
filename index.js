@@ -156,7 +156,16 @@ class Instructor extends Lambdasian {
   }
   //stretch
   //see also - https://stackoverflow.com/questions/21271392/javascript-to-randomly-add-subtract-to-a-number-every-second
+  //alternate implementation
+  //randomGrade(student){
+  //   let rando = Math.floor((Math.random()*100)+1);
+  //   let randoOperator = Math.random() < 0.5 ? -1 : 1;
+  //   rando = rando*randoOperator;
+  //   return student.grade+rando;
+  // }
+  
   randomGrade(student){
+    //floor allows the number to be an integer, and not a float
     let rando = Math.floor((Math.random()*100)+1);
     if (student.grade>rando){
       student.grade-=rando;
